@@ -3,7 +3,9 @@
 	<head>
 		<title>Costa Rica</title>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./css/one_page_website.css">
+		<script src="JS/one_page_website.js"></script>
 	</head>
 	<body>
 		<a name="top"></a>
@@ -34,80 +36,83 @@
 			<section id="gallery">
 				<div class="container">
 					<h1>Gallery</h1>
-					<div class="flex-container">
-						<!-- RAIN FOREST -->
-						<div class="photo-container">
-							<div class="photo">
-								<img src="./images/thumb/sloth.jpg" alt="Rain Forest Sloth">
-								<div class="photo-overlay">
-									<h3>Rain Forest</h3>
-									<p>Costa Rica is home to one of the most beautiful rain forests in the World.</p>
-								</div>
-							</div>
+					<!-- Images used to open the lightbox -->
+					<div class="row">
+						<div class="column">
+							<img src="./images/sloth.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="Rain Forest Sloth">
 						</div>
-						<!-- RAIN FOREST -->
-							
-						<!-- OCEAN -->
-						<div class="photo-container">
-							<div class="photo">
-								<img src="./images/thumb/ocean.jpg" alt="Ocean Wildlife Dolphin and Turtle">
-								<div class="photo-overlay">
-									<h3>Ocean Wildlife</h3>
-									<p>Situated between the Pacific and Atlantic oceans, Costa Rica is the perfect place to experience some of the best beaches and marine wildlife!</p>
-								</div>
-							</div>
+						<div class="column">
+							<img src="./images/ocean.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow"  alt="Ocean Wildlife Dolphin and Turtle">
 						</div>
-						<!-- END OCEAN -->
+						<div class="column">
+							<img src="./images/arenalvolcano.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" " alt="Costa Rican Landmarks">
+						</div>
+						<div class="column">
+							<img src="./images/sanjose.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow"  alt="San Jose">
+						</div>
+						<div class="column">
+							<img src="./images/art.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow"  alt="Costa Rican Painting">
+						</div>
+					</div>
+					
+					<!-- The Modal/Lightbox -->
+					<div id="myModal" class="modal">
+						<span class="close cursor" onclick="closeModal()">&times;</span>
+						<div class="modal-content">
+							<div class="mySlides">
+								<div class="numbertext">1 / 5</div>
+								<img src="./images/sloth_large.jpg" style="width:100%">
+							</div>
 						
-						<!-- LANDMARKS -->
-						<div class="photo-container">
-							<div class="photo">
-								<img src="./images/thumb/landmarks.jpg" alt="Costa Rican Landmarks">
-								<div class="photo-overlay">
-									<h3>Landmarks</h3>
-									<p>From the Museo Nacional de Costa Rica - San Jose, to the Hanging Bridges of Arenal and the Arenal Volcano, Costa Rica is sure to have something for everyone!</p>
-								</div>
+							<div class="mySlides">
+								<div class="numbertext">2 / 5</div>
+								<img src="./images/ocean_large.jpg" style="width:100%">
 							</div>
-						</div>
-						<!-- END LANDMARKS -->
 						
-						<!-- CITIES -->
-						<div class="photo-container">
-							<div class="photo">
-								<img src="./images/thumb/cities.jpg" alt="San Jose">
-								<div class="photo-overlay">
-									<h3>Cities</h3>
-									<p>San Jose, Puerto Limon and Alajuela, to name a few!</p>
-								</div>
+							<div class="mySlides">
+								<div class="numbertext">3 / 5</div>
+								<img src="./images/arenalvolcano_large.jpg" style="width:100%">
 							</div>
-						</div>
-						<!-- END CITIES -->
 						
-						<!-- ART -->
-						<div class="photo-container">
-							<div class="photo">
-								<img src="./images/thumb/art.jpg" alt="Costa Rican Painting">
-								<div class="photo-overlay">
-									<h3>Art</h3>
-									<p>Costa Rican art is very rich, due to the blending of its three main communities: Indigenous, European and African. </p>
-								</div>
+							<div class="mySlides">
+								<div class="numbertext">4 / 5</div>
+								<img src="./images/sanjose_large.jpg" style="width:100%">
 							</div>
-						</div>
-						<!-- END ART -->
+
+							<div class="mySlides">
+								<div class="numbertext">5 / 5</div>
+								<img src="./images/art_large.jpg" style="width:100%">
+							</div>
 						
-						<!-- CLOTHING -->
-						<div class="photo-container">
-							<div class="photo">
-								<img src="./images/thumb/clothing.jpg" alt="Costa Rican Woman in Typical Clothing">
-								<div class="photo-overlay">
-									<h3>Clothing</h3>
-									<p>Vibrant and colourful!</p>
-								</div>
+							<!-- Next/previous controls -->
+							<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+							<a class="next" onclick="plusSlides(1)">&#10095;</a>
+						
+							<!-- Caption text -->
+							<div class="caption-container">
+								<p id="caption"></p>
+							</div>
+					
+							<!-- Thumbnail image controls -->
+							<div class="column">
+								<img class="demo cursor" src="./images/sloth_large.jpg" style="width:100%" onclick="currentSlide(1)" alt="Rain Forest Sloth">
+							</div>
+						
+							<div class="column">
+								<img class="demo cursor" src="./images/ocean_large.jpg" style="width:100%" onclick="currentSlide(2)" alt="Ocean Wildlife Dolphin and Turtle">
+							</div>
+						
+							<div class="column">
+								<img class="demo cursor" src="./images/arenalvolcano_large.jpg" style="width:100%" onclick="currentSlide(3)" alt="Costa Rican Landmarks">
+							</div>
+						
+							<div class="column">
+								<img class="demo cursor" src="./images/sanjose_large.jpg" style="width:100%" onclick="currentSlide(4)" alt="San Jose">
+							</div>
+							<div class="column">
+								<img class="demo cursor" src="./images/art_large.jpg" style="width:100%" onclick="currentSlide(5)" alt="Costa Rican Painting">
 							</div>
 						</div>
-						<!-- END CLOTHING -->
-							
-							
 					</div>
 				</div>
 			</section>
